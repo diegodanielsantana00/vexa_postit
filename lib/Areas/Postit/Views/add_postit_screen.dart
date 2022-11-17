@@ -15,7 +15,17 @@ class _AddPostitScreenState extends State<AddPostitScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        actions: [
+          IconButton(
+              onPressed: () async {
+                print(await _keyEditor.currentState?.getText());
+              },
+              icon: Icon(Icons.abc))
+        ],
+      ),
       body: FlutterSummernote(
         hint: "Your text here...",
         key: _keyEditor,
